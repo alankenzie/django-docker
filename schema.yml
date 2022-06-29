@@ -1,0 +1,129 @@
+openapi: 3.0.3
+info:
+  title: Your Project API
+  version: 1.0.0
+  description: Your project description
+paths:
+  /api/animals/:
+    get:
+      operationId: animals_retrieve
+      tags:
+      - animals
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: animals_create
+      tags:
+      - animals
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    patch:
+      operationId: animals_partial_update
+      tags:
+      - animals
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: animals_destroy
+      tags:
+      - animals
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+  /api/animals/{animal_id}/:
+    get:
+      operationId: animals_retrieve_2
+      parameters:
+      - in: path
+        name: animal_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - animals
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    post:
+      operationId: animals_create_2
+      parameters:
+      - in: path
+        name: animal_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - animals
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    patch:
+      operationId: animals_partial_update_2
+      parameters:
+      - in: path
+        name: animal_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - animals
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+    delete:
+      operationId: animals_destroy_2
+      parameters:
+      - in: path
+        name: animal_id
+        schema:
+          type: integer
+        required: true
+      tags:
+      - animals
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '204':
+          description: No response body
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
